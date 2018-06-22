@@ -1,0 +1,57 @@
+<div id="menu-container">
+
+  <div *ngIf="web" id="web-menu">
+
+    <button mat-button (click)="announce()">Home</button>
+    <button mat-button>About</button>
+    <button mat-button>Blog</button>
+
+    <!-- <button mat-icon-button id="logo-button"> -->
+    <mat-icon id="logo">blur_on</mat-icon>
+    <!-- </button> -->
+
+    <button mat-button>Experience</button>
+    <button mat-button>Services</button>
+    <button mat-button>Contact</button>
+
+  </div>
+
+  <div *ngIf="mobile" id="mobile-menu">
+
+    <button mat-icon-button>
+      <mat-icon style="font-size:30px;">search</mat-icon>
+    </button>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon id="nav-button">more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>About</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Blog</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Experience</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Services</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Contact</span>
+      </button>
+    </mat-menu>
+
+  </div>
+
+</div>

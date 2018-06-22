@@ -9,11 +9,13 @@ import { CustomMaterialModule } from "./custom-material.module";
 //Components
 import { AppComponent } from './app.component';
 import { MyDashboardComponent } from "./my-dashboard/my-dashboard.component";
+import { MenuComponent } from "./menu/menu.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyDashboardComponent
+    MyDashboardComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

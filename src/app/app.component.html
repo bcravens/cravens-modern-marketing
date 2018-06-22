@@ -1,1 +1,47 @@
-<my-dashboard></my-dashboard>
+<!-- <menu></menu>
+<my-dashboard></my-dashboard> -->
+
+<div id="grid-container">
+
+  <!-- Grid list -->
+  <mat-grid-list [cols]="masterCols" rowHeight="100px" gutterSize="20px">
+
+    <!-- Menu tile -->
+    <mat-grid-tile id="menu-tile" [colspan]="masterCols" rowspan="1">
+
+      <menu id="menu"></menu>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile id="home-image" [colspan]="masterCols" rowspan="4">
+    </mat-grid-tile>
+
+    <!-- Content tiles -->
+    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
+      <mat-grid-tile-header>
+        Tile Header
+      </mat-grid-tile-header>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            {{tile.title}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div>Content.</div>
+        </mat-card-content>
+      </mat-card>
+      <mat-grid-tile-footer>
+        Tile Footer.
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>
