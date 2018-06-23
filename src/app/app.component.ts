@@ -7,15 +7,14 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  web: boolean = false;
+  moible: boolean = true;
   masterCols: number = 4;
-  tiles = [
-    { title: 'Tile 1', cols: 1, rows: 2 },
-    { title: 'Tile 2', cols: 1, rows: 2 },
-    { title: 'Tile 3', cols: 1, rows: 2 },
-    { title: 'Tile 4', cols: 1, rows: 2 },
-    { title: 'Tile 5', cols: 1, rows: 2 },
-    { title: 'Tile 6', cols: 1, rows: 2 },
-    { title: 'Tile 7', cols: 1, rows: 2 }
+  talkingPoints = [
+    { title: 'Development', cols: 1, rows: 2, logo: "language", summary: "Plan, strategize, and implement a complete marketing campaign that best suits you and your company. " },
+    { title: 'Digital Marketing', cols: 1, rows: 2, logo: "scatter_plot", summary: "Develop a logical and balanced approach to digital, using the proper tools, to measure and maximize return on your marketing investment. " },
+    { title: 'Transformation', cols: 1, logo: "linear_scale", rows: 2, summary: "Re-shape your team and re-design the way you work for digital-era growth, functionality, and success.  " },
+    { title: 'Services', cols: 1, rows: 2, logo: "whatshot", summary: "Branding, messaging and content. Web, search and social business. Lead generation, pipeline & reporting​. Email marketing, nurturing, automation" }
   ];
 
   constructor(breakpointObserver: BreakpointObserver) {
@@ -39,17 +38,13 @@ export class AppComponent {
   }
 
   setDefault() {
-    // console.log("default");
-    // this.tiles[1].cols = 1;
-    // this.tiles[2].cols = 1;
-    this.masterCols = 4;
+    this.web = true;
+    this.moible = false;
   }
 
   setMoible() {
-    // console.log("mobile");
-    // this.tiles[1].cols = 2;
-    // this.tiles[2].cols = 2;
-    this.masterCols = 2;
+    this.moible = true;
+    this.web = false;
   }
 
 }

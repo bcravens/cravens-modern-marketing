@@ -5,7 +5,7 @@
     margin-top: 40px;
 }
 
-#nav-button {
+#nav-icon {
     font-size: 30px;
 }
 
@@ -13,6 +13,8 @@
     height: 50px;
     width: 50px;
     font-size: 50px;
+    color: #091353;
+    font-weight: 700;
 }
 
 #web-menu{
@@ -27,4 +29,12 @@
     justify-content: flex-end;
     align-items: center;
     width:100%;
+}
+
+.nav-button {
+    font-size: 12px;
+    letter-spacing: .2em;
+    font-weight: 700;
+    color: #091353;
+    font-style: normal;
 }

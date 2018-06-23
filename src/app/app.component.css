@@ -1,6 +1,7 @@
 #grid-container {
-  margin-left: 40px;
-  margin-right: 40px;
+  /* margin-left: 40px;
+  margin-right: 40px;  */
+  font-family: 'Encode Sans Condensed', sans-serif;
 }
 
 #menu {
@@ -9,7 +10,95 @@
 }
 
 #home-image {
-  background-color: royalblue;
+  /* height: 600px; */
+  background-size: cover;
+  background-image: url('../assets/MOUNTAIN_PIC.jpg');
+  font-size: 3em;
+  color: white;
+}
+
+#lets-talk {
+  width: 100%;
+}
+
+#image-text {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Jura', sans-serif; */
+}
+
+#welcome {
+  font-size: .3em;
+  letter-spacing: 4px;
+}
+
+#cravens {
+  font-size: 90px;
+  letter-spacing: -.04em;
+  font-weight: 600;
+}
+
+#modern {
+  font-size: 90px;
+  letter-spacing: -.04em;
+  font-weight: 600;
+}
+
+#marketing {
+  font-size: 90px;
+  letter-spacing: -.04em;
+  font-weight: 600;
+}
+
+#digital {
+  font-size: 1em;
+  letter-spacing: 5px;
+}
+
+.phrase {
+  font-size: 50px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#content-tile-container {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#content-list {
+  width: 100%;
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+#point-list {
+  width: 100%;
+}
+
+.point-logo {
+  height: 50px;
+  width: 50px;
+  font-size: 50px;
+  color: orangered;
+  font-weight: 500;
+}
+
+.point-title {
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.point-summary {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 /*

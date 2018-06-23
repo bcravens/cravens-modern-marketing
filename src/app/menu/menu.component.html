@@ -2,17 +2,17 @@
 
   <div *ngIf="web" id="web-menu">
 
-    <button mat-button (click)="announce()">Home</button>
-    <button mat-button>About</button>
-    <button mat-button>Blog</button>
+    <button mat-button class="nav-button">HOME</button>
+    <button mat-button class="nav-button">ABOUT</button>
+    <button mat-button class="nav-button">BLOG</button>
 
     <!-- <button mat-icon-button id="logo-button"> -->
-    <mat-icon id="logo">blur_on</mat-icon>
+    <mat-icon id="logo">all_inclusive</mat-icon>
     <!-- </button> -->
 
-    <button mat-button>Experience</button>
-    <button mat-button>Services</button>
-    <button mat-button>Contact</button>
+    <button mat-button class="nav-button">EXPERIENCE</button>
+    <button mat-button class="nav-button">SERVICES</button>
+    <button mat-button class="nav-button">CONTACT</button>
 
   </div>
 
@@ -23,7 +23,7 @@
     </button>
 
     <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon id="nav-button">more_vert</mat-icon>
+      <mat-icon id="nav-icon">more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>

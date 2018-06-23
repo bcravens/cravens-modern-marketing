@@ -6,42 +6,120 @@
   <!-- Grid list -->
   <mat-grid-list [cols]="masterCols" rowHeight="100px" gutterSize="20px">
 
-    <!-- Menu tile -->
+    <!-- Menu -->
     <mat-grid-tile id="menu-tile" [colspan]="masterCols" rowspan="1">
-
       <menu id="menu"></menu>
-
     </mat-grid-tile>
 
-    <mat-grid-tile id="home-image" [colspan]="masterCols" rowspan="4">
+    <!-- Home Image -->
+    <mat-grid-tile id="home-image" [colspan]="masterCols" rowspan="6">
+      <mat-grid-list id="image-text" cols="1" rowHeight="50px" gutterSizer="20px">
+        <mat-grid-tile colspan="1" rowspan="2" id="welcome">WELCOME</mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="2" id="cravens">CRAVENS</mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="2" id="modern">MODERN</mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="2" id="marketing">MARKETING</mat-grid-tile>
+      </mat-grid-list>
+    </mat-grid-tile>
+
+    <!-- Lets talk -->
+    <mat-grid-tile [colspan]="masterCols" rowspan="2">
+      <mat-grid-list id="lets-talk" cols="1" rowHeight="75px">
+        <mat-grid-tile class="phrase">Marketing Ideas</mat-grid-tile>
+        <mat-grid-tile class="phrase">Executed Flawlessly</mat-grid-tile>
+      </mat-grid-list>
     </mat-grid-tile>
 
     <!-- Content tiles -->
-    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
-      <mat-grid-tile-header>
-        Tile Header
-      </mat-grid-tile-header>
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-            {{tile.title}}
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <div>Content.</div>
-        </mat-card-content>
-      </mat-card>
-      <mat-grid-tile-footer>
-        Tile Footer.
-      </mat-grid-tile-footer>
-    </mat-grid-tile>
+
+    <!-- Web -->
+    <div *ngIf="web">
+      <mat-grid-tile id="content-tile" [colspan]="masterCols" rowspan="4">
+        <mat-grid-list id="content-list" cols="10" rowHeight="350px" gutterSize="40px">
+          <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
+          <mat-grid-tile *ngFor="let point of talkingPoints" [colspan]="2" [rowspan]="1">
+            <mat-grid-list id="point-list" cols="1" rowHeight="30px">
+              <mat-grid-tile [colspan]="point.cols" [rowspan]="point.rows">
+                <mat-icon class="point-logo">{{point.logo}}</mat-icon>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="point.cols" [rowspan]="point.rows" class="point-title">
+                <div>{{point.title}}</div>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="point.cols" [rowspan]="point.rows+2" class="point-summary">
+                <div>{{point.summary}}</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
+        </mat-grid-list>
+      </mat-grid-tile>
+    </div>
+
+    <!-- Mobile -->
+    <div *ngIf="moible">
+      <mat-grid-tile id="content-tile" [colspan]="masterCols" rowspan="16">
+        <mat-grid-list id="content-list" cols="1" rowHeight="350px" gutterSize="40px">
+          <mat-grid-tile *ngFor="let point of talkingPoints" [colspan]="1" [rowspan]="1">
+            <mat-grid-list id="point-list" cols="1" rowHeight="30px">
+              <mat-grid-tile [colspan]="point.cols" [rowspan]="point.rows">
+                <mat-icon class="point-logo">{{point.logo}}</mat-icon>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="point.cols" [rowspan]="point.rows" class="point-title">
+                <div>{{point.title}}</div>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="point.cols" [rowspan]="point.rows+2" class="point-summary">
+                <div>{{point.summary}}</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-grid-tile>
+          <!-- <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile> -->
+        </mat-grid-list>
+      </mat-grid-tile>
+    </div>
 
   </mat-grid-list>
 </div>
+
+
+<!-- Web -->
+<!-- <div *ngIf="web">
+  <mat-grid-tile id="content-tile" [colspan]="masterCols" rowspan="4" style="border: 1px solid red;">
+    <mat-grid-list id="content-list" cols="10" rowHeight="350px" gutterSize="40px">
+      <mat-grid-tile colspan="1" rowspan="1" style="border: 1px solid blue;"></mat-grid-tile>
+      <mat-grid-tile *ngFor="let point of talkingPoints" [colspan]="2" [rowspan]="1" style="border: 1px solid green;">
+        <mat-grid-list id="point-list" cols="1" rowHeight="30px" style="border: 1px solid purple;">
+          <mat-grid-tile [colspan]="point.cols" [rowspan]="point.rows" style="border: 1px solid yellow;">
+            <mat-icon class="point-logo">{{point.logo}}</mat-icon>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="point.cols" [rowspan]="point.rows" class="point-title" style="border: 1px solid orange;">
+            <div>{{point.title}}</div>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="point.cols" [rowspan]="point.rows+2" class="point-summary" style="border: 1px solid pink;">
+            <div>{{point.summary}}</div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1" style="border: 1px solid blue;"></mat-grid-tile>
+    </mat-grid-list>
+  </mat-grid-tile>
+</div> -->
+
+<!-- Mobile -->
+<!-- <div *ngIf="moible">
+  <mat-grid-tile id="content-tile" [colspan]="masterCols" rowspan="16" style="border: 1px solid red;">
+    <mat-grid-list id="content-list" cols="1" rowHeight="350px" gutterSize="40px">
+      <mat-grid-tile *ngFor="let point of talkingPoints" [colspan]="1" [rowspan]="1" style="border: 1px solid green;">
+        <mat-grid-list id="point-list" cols="1" rowHeight="30px" style="border: 1px solid purple; margin-left: 7vw; margin-right: 7vw;">
+          <mat-grid-tile [colspan]="point.cols" [rowspan]="point.rows" style="border: 1px solid yellow;">
+            <mat-icon class="point-logo">{{point.logo}}</mat-icon>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="point.cols" [rowspan]="point.rows" class="point-title" style="border: 1px solid orange;">
+            <div>{{point.title}}</div>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="point.cols" [rowspan]="point.rows+2" class="point-summary" style="border: 1px solid pink;">
+            <div>{{point.summary}}</div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-grid-tile>
+</div> -->
