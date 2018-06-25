@@ -12,9 +12,9 @@
 #home-image {
   /* height: 600px; */
   background-size: cover;
-  background-image: url('../assets/MOUNTAIN_PIC.jpg');
+  background-image: url('../assets/PEEPS.jpg');
   font-size: 3em;
-  color: white;
+  color: #091353;
 }
 
 #lets-talk {

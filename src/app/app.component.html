@@ -23,7 +23,7 @@
 
     <!-- Lets talk -->
     <mat-grid-tile [colspan]="masterCols" rowspan="2">
-      <mat-grid-list id="lets-talk" cols="1" rowHeight="75px">
+      <mat-grid-list id="lets-talk" cols="1" rowHeight="70px">
         <mat-grid-tile class="phrase">Marketing Ideas</mat-grid-tile>
         <mat-grid-tile class="phrase">Executed Flawlessly</mat-grid-tile>
       </mat-grid-list>
@@ -33,7 +33,7 @@
 
     <!-- Web -->
     <div *ngIf="web">
-      <mat-grid-tile id="content-tile" [colspan]="masterCols" rowspan="4">
+      <mat-grid-tile id="content-tile" [colspan]="masterCols" rowspan="3">
         <mat-grid-list id="content-list" cols="10" rowHeight="350px" gutterSize="40px">
           <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
           <mat-grid-tile *ngFor="let point of talkingPoints" [colspan]="2" [rowspan]="1">
